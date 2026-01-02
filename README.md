@@ -1,5 +1,7 @@
 # 🌶️🐟 Spicy Tuna 
 
+A task management app that changes with the user. Name will probably change.
+
 **PHP:** 8.5  
 **Laravel:** 12  
 **Node:** 22  
@@ -7,7 +9,7 @@
 **Database:** SQLite  
 **Frontend:** [Livewire v4](https://livewire.laravel.com)  
 **Testing:** [Pest v4](https://pestphp.com/docs/installation)  
-**Hosting:** TBD
+**Hosting:** TBD  
 **Notable Packages:**
 
 
