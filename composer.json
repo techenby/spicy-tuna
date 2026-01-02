@@ -1,15 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "techenby/spicy-tuna",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A task management app that changes with the user",
     "keywords": [
         "laravel",
         "framework"
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.5",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
