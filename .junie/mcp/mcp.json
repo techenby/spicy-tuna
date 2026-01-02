@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Users/andynewhouse/Library/Application Support/Herd/bin/php85",
+            "args": [
+                "/Users/andynewhouse/Sites/Personal/spicy-tuna/artisan",
+                "boost:mcp"
+            ]
+        },
+        "herd": {
+            "command": "/Users/andynewhouse/Library/Application Support/Herd/bin/php85",
+            "args": [
+                "/Applications/Herd.app/Contents/Resources/herd-mcp.phar"
+            ],
+            "env": {
+                "SITE_PATH": "/Users/andynewhouse/Sites/Personal/spicy-tuna"
+            }
+        }
+    }
+}
