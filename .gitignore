@@ -29,3 +29,6 @@ AGENTS.md
 boost.json
 junie/
 .claude/
+
+# Native PHP
+/nativephp
