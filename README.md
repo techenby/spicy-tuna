@@ -11,6 +11,7 @@ A task management app that changes with the user. Name will probably change.
 **Testing:** [Pest v4](https://pestphp.com/docs/installation)  
 **Hosting:** TBD  
 **Notable Packages:**
+- [Essentials](https://github.com/nunomaduro/essentials)
 - [Flux](https://fluxui.dev) - Livewire UI component library
 
 ## Table of Contents
