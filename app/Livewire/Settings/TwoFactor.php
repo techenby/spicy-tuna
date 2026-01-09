@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Settings;
 
+use Livewire\Attributes\Computed;
 use Exception;
 use Laravel\Fortify\Actions\ConfirmTwoFactorAuthentication;
 use Laravel\Fortify\Actions\DisableTwoFactorAuthentication;
@@ -138,7 +139,8 @@ class TwoFactor extends Component
     /**
      * Get the current modal configuration state.
      */
-    public function getModalConfigProperty(): array
+    #[Computed]
+    public function modalConfig(): array
     {
         if ($this->twoFactorEnabled) {
             return [
