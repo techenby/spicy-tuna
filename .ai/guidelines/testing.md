@@ -112,6 +112,84 @@ test('component renders', function () {
 });
 ```
 
+## Avoid Response Variables
+
+Chain assertions directly from the request instead of storing in a `$response` variable.
+
+```php
+// Correct - chain directly
+test('user can login', function () {
+    $user = User::factory()->create();
+
+    $this->post(route('login.store'), [
+        'email' => $user->email,
+        'password' => 'password',
+    ])
+        ->assertSessionHasNoErrors()
+        ->assertRedirect(route('dashboard', absolute: false));
+
+    $this->assertAuthenticated();
+});
+
+// Incorrect - unnecessary variable
+test('user can login', function () {
+    $user = User::factory()->create();
+
+    $response = $this->post(route('login.store'), [
+        'email' => $user->email,
+        'password' => 'password',
+    ]);
+
+    $response->assertSessionHasNoErrors()
+        ->assertRedirect(route('dashboard', absolute: false));
+
+    $this->assertAuthenticated();
+});
+```
+
+## Assertion Formatting
+
+Always break assertions to new lines - never inline them with the request.
+
+```php
+// Correct - assertions on new lines
+test('page renders', function () {
+    $this->get('/dashboard')
+        ->assertOk();
+});
+
+// Correct - multiple assertions
+test('page renders with content', function () {
+    $this->get('/dashboard')
+        ->assertOk()
+        ->assertSee('Welcome');
+});
+
+// Incorrect - inlined assertion
+test('page renders', function () {
+    $this->get('/dashboard')->assertOk();
+});
+```
+
+When making POST/GET requests with data arrays, close the array then start assertions on the next line:
+
+```php
+// Correct
+$this->post(route('register.store'), [
+    'name' => 'John Doe',
+    'email' => 'test@example.com',
+])
+    ->assertSessionHasNoErrors()
+    ->assertRedirect(route('dashboard'));
+
+// Incorrect
+$this->post(route('register.store'), [
+    'name' => 'John Doe',
+    'email' => 'test@example.com',
+])->assertSessionHasNoErrors()
+    ->assertRedirect(route('dashboard'));
+```
+
 ## Assertion Chaining
 
 Chain assertions on the response object rather than making separate assertion calls.
