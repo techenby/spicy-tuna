@@ -85,3 +85,30 @@ FLUX_LICENSE_KEY
 To get started with Laravel Boost, run `php artisan boost:install`. This command publishes the guidelines for your chosen agent. Be sure to add all Boost-generated files to the `.gitignore` file.
 
 Add any project rules that apply to all agents to the `.ai/guidelines` folder as `.md` or `.blade.php` files.
+
+## ERD
+
+```mermaid
+erDiagram
+    users ||--o{ tasks : "hasMany"
+    users {
+        bigint id PK
+        string name
+        string email UK
+        string password
+        timestamp email_verified_at
+        string remember_token
+        timestamp created_at
+        timestamp updated_at
+    }
+    tasks {
+        bigint id PK
+        bigint user_id FK
+        string name
+        text description
+        json frequency
+        timestamp created_at
+        timestamp updated_at
+        timestamp deleted_at
+    }
+```
